@@ -74,7 +74,7 @@ sha256sum -c checksums.txt
      --html ./analysis.html
    ```
 
-The CLI prints progress to stdout and writes the JSON envelope plus an optional HTML report.
+The CLI prints progress to stdout with timestamped `INFO` / `WARN` log lines and writes the JSON envelope plus an optional HTML report.
 
 ---
 
@@ -156,6 +156,11 @@ This is the recommended path for GitHub Actions, GitLab CI, and other CI systems
 `schemaVersion` follows semantic versioning. Additive fields are backward-compatible; breaking shape changes bump the major version.
 
 `--html` writes a fully self-contained HTML report (no external assets, no network requests on open).
+
+Recent output additions:
+
+- Analysis items include explicit `used: "yes" | "no"` values alongside the existing usage counts.
+- Dimensions and measures include explicit `broken: "yes" | "no"` values alongside the existing boolean fields.
 
 ---
 

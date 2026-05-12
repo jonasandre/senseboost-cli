@@ -22,6 +22,23 @@ Use the following categories (omit empty ones):
 - Output      — changes to the JSON envelope or HTML report shape
 -->
 
+## [v0.1.1] — 2026-05-12
+
+### Fixed
+
+- Bookmark-backed objects such as `alertbookmark` and `subscriptionbookmark` now use the correct Qlik bookmark handle during analysis, removing recurring invalid-handle warnings from app scans.
+- Dimension validation no longer sends plain field names such as `CPF/CNPJ Fornecedor` or `Mês/Ano` to `CheckExpression`, which removes false-positive JSON parse errors for direct field definitions.
+
+### Changed
+
+- CLI progress and completion lines now use a consistent timestamped format with an explicit log level (`INFO` / `WARN`).
+
+### Output
+
+- JSON analysis items now include explicit `used: "yes" | "no"` fields for fields, variables, dimensions, and measures while keeping the existing usage counters.
+- JSON dimensions and measures now include explicit `broken: "yes" | "no"` fields alongside the existing boolean/status fields.
+- HTML reports now render yes/no badges for usage, highlight unused items more consistently, and show broken status explicitly for measures.
+
 ## [v0.1.0] — 2026-05-11
 
 Initial public release.
@@ -56,5 +73,6 @@ Initial public release.
 - HTML report is intentionally simple (summary cards + four tables). Richer visualizations are not planned for the free CLI — the SenseBoost SaaS provides those.
 - No `--redact-expressions` flag yet; if you need to share a report without business-logic expressions, post-process the JSON envelope.
 
-[Unreleased]: https://github.com/jonasandre/senseboost-cli/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/jonasandre/senseboost-cli/compare/v0.1.1...HEAD
+[v0.1.1]: https://github.com/jonasandre/senseboost-cli/releases/tag/v0.1.1
 [v0.1.0]: https://github.com/jonasandre/senseboost-cli/releases/tag/v0.1.0
