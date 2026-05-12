@@ -22,6 +22,18 @@ Use the following categories (omit empty ones):
 - Output      — changes to the JSON envelope or HTML report shape
 -->
 
+## [v0.2.0] — 2026-05-12
+
+### Added
+
+- Shell completion generation via `senseboost completion` for bash, zsh, fish, and PowerShell.
+- Dynamic completion of saved context names for `senseboost context use`, `senseboost context delete`, and `senseboost analyze --context`.
+
+### Changed
+
+- `senseboost completion` now tries to detect the current shell automatically when no shell is passed, while keeping explicit shell selection as a fallback.
+- Public CLI docs now explain shell completion setup with simpler usage examples.
+
 ## [v0.1.1] — 2026-05-12
 
 ### Fixed
@@ -73,6 +85,7 @@ Initial public release.
 - HTML report is intentionally simple (summary cards + four tables). Richer visualizations are not planned for the free CLI — the SenseBoost SaaS provides those.
 - No `--redact-expressions` flag yet; if you need to share a report without business-logic expressions, post-process the JSON envelope.
 
-[Unreleased]: https://github.com/jonasandre/senseboost-cli/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/jonasandre/senseboost-cli/compare/v0.2.0...HEAD
+[v0.2.0]: https://github.com/jonasandre/senseboost-cli/releases/tag/v0.2.0
 [v0.1.1]: https://github.com/jonasandre/senseboost-cli/releases/tag/v0.1.1
 [v0.1.0]: https://github.com/jonasandre/senseboost-cli/releases/tag/v0.1.0

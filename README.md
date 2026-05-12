@@ -95,10 +95,41 @@ senseboost analyze \
   [--force] \
   [--app-name <n>] [--space-name <n>]
 
+senseboost completion [shell]
+
 senseboost version
 ```
 
 Full flag reference: `senseboost <command> --help`.
+
+---
+
+## Shell autocomplete
+
+`senseboost completion` tries to detect your shell automatically.
+
+Generate a completion script and load it:
+
+```bash
+# macOS default (usually zsh)
+source <(senseboost completion)
+
+# bash or zsh explicitly
+source <(senseboost completion zsh)
+source <(senseboost completion bash)
+
+# fish (different shell syntax)
+senseboost completion | source
+
+# PowerShell
+senseboost completion | Out-String | Invoke-Expression
+```
+
+The CLI also suggests saved context names for `senseboost context use`, `senseboost context delete`, and `senseboost analyze --context`.
+
+If detection fails, run `echo $SHELL` and then pass the shell explicitly, for example `senseboost completion zsh`.
+
+For persistent setup, save the generated script in your shell's completion directory or source it from your shell startup file.
 
 ---
 
